@@ -24,11 +24,11 @@ export class NgxMrzReaderComponent implements OnInit {
   ngOnInit(): void {
     this.overlayManager.initOverlay(document.getElementById('overlay') as HTMLCanvasElement);
     (async () => {
-      this.reader = await LabelRecognizer.createInstance();
-      await this.reader.updateRuntimeSettingsFromString("MRZ");
       LabelRecognizer.onResourcesLoaded = (resourcePath) => {
         this.isLoaded = true;
       };
+      this.reader = await LabelRecognizer.createInstance();
+      await this.reader.updateRuntimeSettingsFromString("MRZ");
       
     })();
   }
