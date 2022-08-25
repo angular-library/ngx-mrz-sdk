@@ -1,16 +1,34 @@
-import { NgModule } from '@angular/core';
-import { NgxMrzSdkComponent } from './ngx-mrz-sdk.component';
-
-
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgxMrzReaderComponent } from './ngx-mrz-reader/ngx-mrz-reader.component';
+import { NgxMrzScannerComponent } from './ngx-mrz-scanner/ngx-mrz-scanner.component';
+import { MrzSdkServiceConfig } from './ngx-mrz-sdk.service';
 
 @NgModule({
   declarations: [
-    NgxMrzSdkComponent
+    NgxMrzReaderComponent,
+    NgxMrzScannerComponent
   ],
   imports: [
   ],
   exports: [
-    NgxMrzSdkComponent
+    NgxMrzReaderComponent,
+    NgxMrzScannerComponent
   ]
 })
-export class NgxMrzSdkModule { }
+export class NgxMrzSdkModule { 
+  constructor(@Optional() @SkipSelf() parentModule?: NgxMrzSdkModule) {
+    if (parentModule) {
+      throw new Error(
+        'GreetingModule is already loaded. Import it in the AppModule only');
+    }
+  }
+
+  static forRoot(config: MrzSdkServiceConfig): ModuleWithProviders<NgxMrzSdkModule> {
+    return {
+      ngModule: NgxMrzSdkModule,
+      providers: [
+        { provide: MrzSdkServiceConfig, useValue: config }
+      ]
+    };
+  }
+}

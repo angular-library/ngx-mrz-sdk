@@ -1,10 +1,28 @@
 {
   "name": "ngx-mrz-sdk",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Machine readable zone (MRZ) reading SDK for passport, Visa, ID card and travel document.",
+  "author": "yushulx",
+  "homepage": "https://github.com/yushulx/ngx-mrz-sdk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yushulx/ngx-mrz-sdk.git"},
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0"
+    "@angular/core": "^14.1.0",
+    "dynamsoft-camera-enhancer": "^3.0.1",
+    "dynamsoft-label-recognizer": "^2.2.11"
   },
+  "keywords": [
+    "mrz",
+    "machine-readable-zone",
+    "ocr",
+    "passport",
+    "Visa",
+    "ID",
+    "travel-documents"
+  ],
   "dependencies": {
     "tslib": "^2.3.0"
   }

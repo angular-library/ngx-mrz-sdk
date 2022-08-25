@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxMrzSdkComponent } from './ngx-mrz-sdk.component';
+import { NgxMrzParserComponent } from './ngx-mrz-parser.component';
 
-describe('NgxMrzSdkComponent', () => {
-  let component: NgxMrzSdkComponent;
-  let fixture: ComponentFixture<NgxMrzSdkComponent>;
+describe('NgxMrzParserComponent', () => {
+  let component: NgxMrzParserComponent;
+  let fixture: ComponentFixture<NgxMrzParserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxMrzSdkComponent ]
+      declarations: [ NgxMrzParserComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NgxMrzSdkComponent);
+    fixture = TestBed.createComponent(NgxMrzParserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

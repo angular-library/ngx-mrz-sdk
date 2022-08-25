@@ -20,7 +20,17 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/dynamsoft-label-recognizer/dist",
+                "output": "assets/dynamsoft-label-recognizer"
+              },
+	            {
+                "glob": "**/*",
+                "input": "./node_modules/dynamsoft-camera-enhancer/dist",
+                "output": "assets/dynamsoft-camera-enhancer"
+              }
             ],
             "styles": [
               "src/styles.css"
@@ -87,7 +97,17 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/dynamsoft-label-recognizer/dist",
+                "output": "assets/dynamsoft-label-recognizer"
+              },
+	            {
+                "glob": "**/*",
+                "input": "./node_modules/dynamsoft-camera-enhancer/dist",
+                "output": "assets/dynamsoft-camera-enhancer"
+              }
             ],
             "styles": [
               "src/styles.css"

@@ -1,27 +1,69 @@
 # AngularMrzScanner
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+This project demonstrates how to build an Angular MRZ library with [Dynamsoft Label Recognizer](https://www.dynamsoft.com/label-recognition/overview/).
 
-## Development server
+## Development Environment
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+ng --version
 
-## Code scaffolding
+Angular CLI: 13.3.7
+Node: 16.13.1
+Package Manager: npm 8.1.2
+OS: win32 x64
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular: 13.3.10
+... animations, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
 
-## Build
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1303.7
+@angular-devkit/build-angular   13.3.7
+@angular-devkit/core            13.3.7
+@angular-devkit/schematics      13.3.7
+@angular/cli                    13.3.7
+@schematics/angular             13.3.7
+ng-packagr                      13.3.1
+rxjs                            7.5.5
+typescript                      4.6.4
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Dev and Debug the Angular Library Project
+1. Install the dependencies:
+    
+    ```bash
+    npm install
+    ```
+2. The `ngx-mrz-sdk` is located in `projects/ngx-mrz-sdk`. Add the `--watch` flag to run incremental build as a background process:
 
-## Running end-to-end tests
+    ```bash
+    ng build ngx-mrz-sdk --watch
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Apply for a [30-day free trial license](https://www.dynamsoft.com/customer/license/trialLicense?product=dlr) and update the license key in `app.module.ts` file:
+    
+    ```typescript
+    NgxMrzSdkModule.forRoot({ 
+      licenseKey: "DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ==", 
+      dceResourcePath: "assets/dynamsoft-camera-enhancer", 
+      dlrResourcePath: "assets/dynamsoft-label-recognizer"}),
+    ```
 
-## Further help
+4 `HTTPS` is required for web camera access. Run the Angular application as follows:
+    
+    ```bash
+    ng serve --ssl
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Publish the Angular Library Project
+
+```bash
+ng build ngx-mrz-sdk
+cd dist/ngx-mrz-sdk
+npm publish
+```
+
+
