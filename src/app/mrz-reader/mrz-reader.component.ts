@@ -4,6 +4,7 @@ import { NgxMrzSdkService } from 'ngx-mrz-sdk';
 @Component({
   selector: 'app-mrz-reader',
   templateUrl: './mrz-reader.component.html',
+  styleUrls: ['./mrz-reader.component.css']
 })
 export class MrzReaderComponent implements OnInit {
   mrzResult: string = '';
