@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { LabelRecognizer } from 'dynamsoft-label-recognizer';
 import { OverlayManager } from '../overlay';
+import { MrzParser } from '../parser';
 
 @Component({
   selector: 'ngx-mrz-reader',
@@ -15,7 +16,7 @@ export class NgxMrzReaderComponent implements OnInit {
   reader: LabelRecognizer | undefined;
   overlayManager: OverlayManager;
 
-  @Output() result = new EventEmitter<string>();
+  @Output() result = new EventEmitter<any>();
 
   constructor() {
     this.overlayManager = new OverlayManager();
@@ -60,8 +61,15 @@ export class NgxMrzReaderComponent implements OnInit {
                             this.overlayManager.drawOverlay(line.location.points, line.text);
                         }
                       }
-
-                      this.result.emit(txts.join('\n'));
+                      
+                      let parsedResults = "";
+                      if (txts.length == 2) {
+                        parsedResults = MrzParser.parseTwoLines(txts[0], txts[1]);
+                      }
+                      else if (txts.length == 3) {
+                        parsedResults = MrzParser.parseThreeLines(txts[0], txts[1], txts[2]);
+                      }
+                      this.result.emit([txts.join('\n'), parsedResults]);
                     } else {
                       this.result.emit(txts.join(''));
                     }
