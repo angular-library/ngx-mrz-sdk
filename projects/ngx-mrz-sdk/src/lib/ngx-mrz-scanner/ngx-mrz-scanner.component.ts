@@ -17,7 +17,7 @@ export class NgxMrzScannerComponent implements OnInit {
   cameraInfo: any = {};
   videoSelect: HTMLSelectElement | undefined;
   overlayManager: OverlayManager;
-
+  
   @Output() result = new EventEmitter<string>();
 
   constructor() {
