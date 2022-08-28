@@ -9,6 +9,7 @@ import { OverlayManager } from '../overlay';
   styleUrls: ['./ngx-mrz-scanner.component.css']
 })
 export class NgxMrzScannerComponent implements OnInit {
+  @Input() showOverlay: boolean;
   isLoaded = false;
   overlay: HTMLCanvasElement | undefined;
   context: CanvasRenderingContext2D | undefined;
@@ -22,6 +23,7 @@ export class NgxMrzScannerComponent implements OnInit {
 
   constructor() {
     this.overlayManager = new OverlayManager();
+    this.showOverlay = true;
   }
 
   ngOnInit(): void {

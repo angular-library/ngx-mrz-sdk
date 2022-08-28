@@ -1,7 +1,8 @@
 <div>
-  <a>Mrz recognition results: {{mrzResult}}</a>
+  {{mrzResult}}
 </div>
 
 <ngx-mrz-scanner
 (result)="onResultReady($event)"
+[showOverlay]="true"
 ></ngx-mrz-scanner>
