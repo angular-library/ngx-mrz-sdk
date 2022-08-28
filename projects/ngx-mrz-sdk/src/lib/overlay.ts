@@ -23,30 +23,20 @@ export class OverlayManager {
         }
     }
 
-    drawOverlay(localization: any, text: any): void {
+    drawOverlay(points: any, text: any): void {
         if (this.context) {
             this.context.beginPath();
-            this.context.moveTo(localization.x1, localization.y1);
-            this.context.lineTo(localization.x2, localization.y2);
-            this.context.lineTo(localization.x3, localization.y3);
-            this.context.lineTo(localization.x4, localization.y4);
-            this.context.lineTo(localization.x1, localization.y1);
+            this.context.moveTo(points[0].x, points[0].y);
+            this.context.lineTo(points[1].x, points[1].y);
+            this.context.lineTo(points[2].x, points[2].y);
+            this.context.lineTo(points[3].x, points[3].y);
+            this.context.lineTo(points[0].x, points[0].y);
             this.context.stroke();
-
+    
             this.context.font = '18px Verdana';
             this.context.fillStyle = '#ff0000';
-            let x = [
-                localization.x1,
-                localization.x2,
-                localization.x3,
-                localization.x4,
-            ];
-            let y = [
-                localization.y1,
-                localization.y2,
-                localization.y3,
-                localization.y4,
-            ];
+            let x = [points[0].x, points[1].x, points[0].x, points[0].x];
+            let y = [points[0].y, points[1].y, points[0].y, points[0].y];
             x.sort(function (a, b) {
                 return a - b;
             });
@@ -55,8 +45,8 @@ export class OverlayManager {
             });
             let left = x[0];
             let top = y[0];
-
-            this.context.fillText(text, left, top + 50);
+    
+            this.context.fillText(text, left, top);
         }
     }
 }
