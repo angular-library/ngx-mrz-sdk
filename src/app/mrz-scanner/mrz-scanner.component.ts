@@ -4,6 +4,7 @@ import { NgxMrzSdkService } from 'ngx-mrz-sdk';
 @Component({
   selector: 'app-mrz-scanner',
   templateUrl: './mrz-scanner.component.html',
+  styleUrls: ['./mrz-scanner.component.css']
 })
 export class MrzScannerComponent implements OnInit {
   mrzResult: string = '';
