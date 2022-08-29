@@ -58,7 +58,13 @@ export class NgxMrzScannerComponent implements OnInit {
       await this.cameraEnhancer.setUIElement(uiElement);
     }
 
-    if (this.showOverlay) await this.scanner.setImageSource(this.cameraEnhancer, { resultsHighlightBaseShapes: DrawingItem });
+    if (this.showOverlay) {
+      await this.scanner.setImageSource(this.cameraEnhancer, { resultsHighlightBaseShapes: DrawingItem });
+    }
+    else {
+      await this.scanner.setImageSource(this.cameraEnhancer, {});
+    }
+    
     await this.scanner.updateRuntimeSettingsFromString("MRZ");
 
     let cameras = await this.cameraEnhancer.getAllCameras();
