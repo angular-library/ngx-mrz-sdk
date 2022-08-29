@@ -13,7 +13,12 @@ export class MrzScannerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onResultReady(result: string): void {
-    this.mrzResult = result;
+  // result = [originalValue, parsedValue]
+  onResultReady(result: any): void {
+    this.mrzResult = "";
+    for (let i in result[1]) {
+      this.mrzResult += i + ": " + result[1][i] + '\n';
+    }
+    // this.mrzResult = result[0];
   }
 }
