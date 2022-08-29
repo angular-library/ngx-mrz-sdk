@@ -2,6 +2,7 @@
 
 Ngx-mrz-sdk is an Angular MRZ recognition module built with [Dynamsoft Label Recognizer](https://www.npmjs.com/package/dynamsoft-label-recognizer) and [Dynamsoft Camera Enhancer](https://www.npmjs.com/package/dynamsoft-camera-enhancer).
 
+
 ## Usage
 1. Install the Angular library:
 
@@ -97,3 +98,5 @@ Ngx-mrz-sdk is an Angular MRZ recognition module built with [Dynamsoft Label Rec
 
 ## Sample Code
 [https://github.com/yushulx/ngx-mrz-sdk/tree/main/src/app](https://github.com/yushulx/ngx-mrz-sdk/tree/main/src/app)        
+
+![Angular MRZ scanner](https://www.dynamsoft.com/codepool/img/2022/08/angular-mrz-scanner.png)
