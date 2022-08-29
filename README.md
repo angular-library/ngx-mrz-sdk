@@ -58,7 +58,7 @@ typescript                      4.6.4
     ng serve --ssl
     ```
 
-    ![Angular MRZ scanner](https://www.dynamsoft.com/codepool/img/2022/08/angular-mrz-scanner.png)
+  ![Angular MRZ scanner](https://www.dynamsoft.com/codepool/img/2022/08/angular-mrz-scanner.png)
 
 ## Publish the Angular Library Project
 
