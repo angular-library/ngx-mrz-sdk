@@ -1,6 +1,6 @@
 {
   "name": "ngx-mrz-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Machine readable zone (MRZ) reading SDK for passport, Visa, ID card and travel document.",
   "author": "yushulx",
   "homepage": "https://github.com/yushulx/ngx-mrz-sdk",
