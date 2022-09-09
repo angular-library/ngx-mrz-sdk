@@ -1,4 +1,4 @@
-# AngularMrzScanner
+# Angular Mrz Scanner
 
 This project demonstrates how to build an Angular MRZ library with [Dynamsoft Label Recognizer](https://www.dynamsoft.com/label-recognition/overview/).
 
